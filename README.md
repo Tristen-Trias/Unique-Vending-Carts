@@ -6,7 +6,7 @@ Angular 15.0.0
 
 Angular Material 15.0.0
 
-Bootstrap 5.2.0
+Bootstrap 5.3.0
 
 ## Development server
 

@@ -1,30 +1,35 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle()">
+        <button mat-icon-button (click)="leftnav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
         <span>Unique Vending Carts</span>
         <span class="spacer"></span>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="rightnav.toggle()">
             <i class="fas fa-cart-shopping"></i>
         </button>
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="push">
+    <mat-sidenav #leftnav mode="over" position="start">
         <mat-nav-list>
             <div *ngFor="let i of list">
-                <a mat-list-item routerLink={{i.link}} routerLinkActive="active" (click)="sidenav.toggle()">
+                <a mat-list-item routerLink={{i.link}} routerLinkActive="active" (click)="leftnav.toggle()">
                     <i class={{i.icon}}></i>
                     {{i.item}}</a>
             </div>
         </mat-nav-list>
     </mat-sidenav>
+
+    <mat-sidenav #rightnav mode="over" position="end">
+
+    </mat-sidenav>
+
     <mat-sidenav-content>
         <div style="height: 100vh;">
             <div class="d-flex justify-content-center">
-                <div class="col-6 p-2">
+                <div class="col-12 p-2">
                     <router-outlet></router-outlet>
                 </div>
             </div>

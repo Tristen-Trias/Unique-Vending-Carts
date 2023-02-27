@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
+  searchTerm?: string;
+  
+  constructor() { }
 }
